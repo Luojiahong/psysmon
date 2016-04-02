@@ -11,6 +11,12 @@ LIST_OF_PIP_PROGRAMS="numpy scipy matplotlib obspy Pyro4"
 
 # Defining Methods
 
+# Check if root
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
 # LineBreak with specified Character for Formatting
 line_break () {
 	a=0
