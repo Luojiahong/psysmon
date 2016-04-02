@@ -72,6 +72,20 @@ echo
 
 pip install $LIST_OF_PIP_PROGRAMS
 
+# Invoking line_break ()
+line_break
+
+###############################################
+#3.Install seperate Libraries with pip install#
+###############################################
+
+echo \>\> 3.Installing psysmon
+line_break
+echo
+
+cd psysmon
+python setup.py install
+
 ##################
 #ENDED INSTALLING#
 ##################
