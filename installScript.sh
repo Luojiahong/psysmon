@@ -1,3 +1,11 @@
+####################################
+#Author:  Philipp Kogler           #
+#E-Mail:  pkogler@student.tgm.ac.at#
+#Date:    2.04.2016                #
+#version: 0.8                      #
+####################################
+
+
 # !/bin/sh
 # Dieses Script ladet alle notwendigen Packages/Programme
 # Welche notwendig sind um psysmon erfolgreich zu installieren
