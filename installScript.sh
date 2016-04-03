@@ -15,7 +15,7 @@
 # Defining Variables
 COLS=`tput cols`
 LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk3.0"
-LIST_OF_PIP_PROGRAMS="obspy Pyro4"
+LIST_OF_PIP_PROGRAMS="obspy Pyro4 pymysql"
 
 # Defining Methods
 
@@ -65,7 +65,7 @@ echo
 apt-get update -y 
 
 # Installing Required Packages
-apt-get install -f -y $LIST_OF_APT_PROGRAMS --force-yes
+apt-get install -f -y $LIST_OF_APT_PROGRAMS --assume-yes
 
 # Invoking line_break ()
 line_break
