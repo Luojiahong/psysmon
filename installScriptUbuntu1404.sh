@@ -96,7 +96,7 @@ line_break
 echo
 
 cd psysmon
-python setup.py install
+python setup1404.py install
 
 ##################
 #ENDED INSTALLING#
