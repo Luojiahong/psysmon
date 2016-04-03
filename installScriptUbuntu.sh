@@ -14,7 +14,7 @@
 
 # Defining Variables
 COLS=`tput cols`
-LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk3.0"
+LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk2.8"
 LIST_OF_PIP_PROGRAMS="obspy Pyro4"
 
 # Defining Methods
