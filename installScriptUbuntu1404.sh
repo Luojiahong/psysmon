@@ -5,6 +5,10 @@
 #version: 0.8                      #
 ####################################
 
+####################################
+#ONLY FOR UBUNTU 14.04 BECUAUSE THE#
+#THE LIBRARY python-wxgtk is older #
+####################################
 
 # !/bin/sh
 # Dieses Script ladet alle notwendigen Packages/Programme
