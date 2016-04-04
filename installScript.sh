@@ -18,28 +18,59 @@ LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy pyt
 LIST_OF_PIP_PROGRAMS="obspy Pyro4 pymysql"
 
 # Defining Methods
+# LineBreak with specified Character for Formatting
+line_break () {
+        a=0
+        while [ $a -lt $COLS ]
+        do
+                printf =
+                a=`expr $a + 1`
+        done
+}
+
+#Pythonwxgtk version check
+apt-cache search python-wxgtk | grep 'python-wxgtk3.0'
+if [ $? -eq 1 ]
+then
+	line_break
+	echo "Using pthon-wxgtk2.8"
+	line_break
+	LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk2.8"	
+	
+else
+	line_break
+	echo "Using python-wxgtk3.0"
+	line_break
+	LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk3.0"
+fi
 
 # Check if root
-if [ "$(id -u)" != "0" ]; then
+if [ "$(id -u)" != "0" ]
+then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
 
-# LineBreak with specified Character for Formatting
-line_break () {
-	a=0
-	while [ $a -lt $COLS ]
-	do
-        	printf =
-        	a=`expr $a + 1`
-	done
-}
 
 # Welcome Text
 # Foramtierung des Welcome Textes
 # Zaehler Variable a
 # Invoking line_break()
-line_break
+apt-cache search python-wxgtk | grep 'python-wxgtk3.0'
+if [ $? -eq 1 ]
+        then
+        echo "Using pthon-wxgtk2.8"
+        LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk2.8"
+$
+
+        else
+        echo "Using python-wxgtk3.0"
+        LIST_OF_APT_PROGRAMS="python python-dev python-pip mysql-server python-scipy python-matplotlib python-mpltoolkits.basemap python-lxml python-mpltoolkits.basemap python-lxml python-mysqldb python-sqlalchemy python-imaging python-cairo python-wxgtk3.0"
+$
+
+fi
+
+
 
 ########
 #INHALT#
@@ -66,6 +97,20 @@ apt-get update -y
 
 # Installing Required Packages
 apt-get install -f -y $LIST_OF_APT_PROGRAMS --assume-yes
+
+if [[ $? > 0 ]]
+then
+	line_break
+	echo "The command failed. Probably a package Error This Script takes python-wxhtk3.0"
+	echo "Type apt-cache search python-wxgtk and check version"
+	line_break
+   	read -n1 -r -p "Press key to exit..." key
+	exit
+else
+	line_break
+  	echo "The command ran succesfuly, continuing with script."
+	line_break
+fi
 
 # Invoking line_break ()
 line_break
